@@ -26,6 +26,8 @@ export default class App extends Component {
         { id: 'part_time', value: false, text: 'Part Time' },
         { id: 'free_lancer', value: false, text: 'Freelancer' }
       ],
+      locationText: '',
+      experience: '',
       showAdvancedSearch: true
     };
 
@@ -44,7 +46,13 @@ export default class App extends Component {
   }
 
   searchJobs = () => {
-    const { searchText, all, filter } = this.state;
+    const {
+      searchText,
+      all,
+      filter,
+      locationText,
+      experience
+    } = this.state;
 
     const jobType = [];
     for (let i = 0; !all && i < filter.length; i += 1) {
@@ -55,7 +63,9 @@ export default class App extends Component {
 
     const payload = {
       searchText,
-      jobType
+      jobType,
+      locationText,
+      experience
     };
 
     this.backendCommunicator.getData(URLS.JOB_LIST_URL, payload, (data) => {
@@ -81,7 +91,13 @@ export default class App extends Component {
   }
 
   render() {
-    const { jobs, searchText, showAdvancedSearch } = this.state;
+    const {
+      jobs,
+      searchText,
+      showAdvancedSearch,
+      locationText,
+      experience
+    } = this.state;
 
     return (
       <div className="app-container">
@@ -91,7 +107,6 @@ export default class App extends Component {
               <FormControl
                 placeholder="Search By Keywords"
                 aria-label="search"
-                aria-describedby="basic-addon1"
                 onChange={e => this.setState({ searchText: e.target.value })}
                 value={searchText}
               />
@@ -118,14 +133,16 @@ export default class App extends Component {
                   <FormControl
                     placeholder="Filter By Location"
                     aria-label="search"
-                    aria-describedby="basic-addon2"
+                    onChange={e => this.setState({ locationText: e.target.value })}
+                    value={locationText}
                   />
                 </Col>
                 <Col xs="12" sm="6" md="4" lg="3">
                   <FormControl
                     placeholder="Filter By Experience"
                     aria-label="search"
-                    aria-describedby="basic-addon3"
+                    onChange={e => this.setState({ experience: e.target.value })}
+                    value={experience}
                   />
                 </Col>
               </Row>
