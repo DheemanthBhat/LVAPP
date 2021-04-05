@@ -28,9 +28,7 @@ const JobList = (props) => {
               <Col>
                 <span className="job-title">{job.position}</span>
                 <br />
-                <span>
-                  {`${job.company}&nbsp;|&nbsp;${job.location}&nbsp;|&nbsp;${job.experience}`}
-                </span>
+                <span>{`${job.company} | ${job.location} | ${job.experience}`}</span>
                 <br />
                 <span>
                   <strong>Skills:</strong>

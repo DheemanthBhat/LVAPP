@@ -1,7 +1,7 @@
 const JobModel = require('../models/job_schema');
 
-function listAll() {
-  return JobModel.find();
+function listAll(filter, project) {
+  return JobModel.find(filter, project).sort({ updatedAt: -1 });
 }
 
 module.exports = {

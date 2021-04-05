@@ -20,5 +20,14 @@ const definition = {
 
 const options = { collection: 'JobList' };
 
-const JobListSchema = mongoose.Schema(definition, options);
+const JobListSchema = new mongoose.Schema(definition, options);
+
+// Create text index for search.
+JobListSchema.index({
+  position: 'text',
+  location: 'text',
+  company: 'text',
+  skills: 'text'
+});
+
 module.exports = mongoose.model('JobList', JobListSchema);

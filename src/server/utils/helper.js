@@ -19,6 +19,11 @@ function isEmpty(element) {
   return false;
 }
 
+function isNotEmpty(element) {
+  return !isEmpty(element);
+}
+
 module.exports = {
-  isEmpty
+  isEmpty,
+  isNotEmpty
 };

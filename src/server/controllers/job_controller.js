@@ -3,7 +3,19 @@ const helper = require('../utils/helper');
 
 async function listAll(req, res) {
   try {
-    const jobs = await jobManager.listAll();
+    let filter = {};
+
+    if (helper.isNotEmpty(req.body.searchText)) {
+      filter = {
+        $text: { $search: req.body.searchText.toString().trim() }
+      };
+    }
+
+    if (helper.isNotEmpty(req.body.jobType)) {
+      filter.type = { $in: req.body.jobType };
+    }
+
+    const jobs = await jobManager.listAll(filter);
 
     let message = 'Job list fetched successfully';
 

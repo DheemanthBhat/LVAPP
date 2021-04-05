@@ -16,10 +16,6 @@ body {
   border: none;
 }
 
-.light-btn {
-  border: 1px solid black !important;
-}
-
 .app-container {
   padding: 30px;
 }

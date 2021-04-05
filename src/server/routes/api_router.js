@@ -13,6 +13,6 @@ async function listJobs(req, res) {
   jonController.listAll(req, res);
 }
 
-router.get('/jobs', listJobs);
+router.post('/jobs', listJobs);
 
 module.exports = router;
