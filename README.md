@@ -39,22 +39,22 @@ In the production mode, we will have only 1 server running. All the client side 
 
 ```bash
 # Clone the repository
-git clone https://github.com/crsandeep/simple-react-full-stack
+git clone https://github.com/DheemanthBhat/LVAPP
 
 # Go inside the directory
-cd simple-react-full-stack
+cd LVAPP
 
 # Install dependencies
-yarn (or npm install)
+npm install
 
 # Start development server
-yarn dev (or npm run dev)
+npm run dev
 
 # Build for production
-yarn build (or npm run build)
+npm run build
 
 # Start production server
-yarn start (or npm start)
+npm start
 ```
 
 ## Documentation
