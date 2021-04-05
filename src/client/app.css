@@ -7,18 +7,44 @@ body {
   margin: auto;
 }
 
+/* Common-margin-bottom */
+.c-m-b {
+  margin-bottom: 10px;
+}
+
+.link {
+  border: none;
+}
+
+.light-btn {
+  border: 1px solid black !important;
+}
+
+.app-container {
+  padding: 30px;
+}
+
 .job-list {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.company-logo {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-right: 25px;
+  margin-left: 10px;
 }
 
 .job-list > li {
   border: 1px solid black;
-  border-radius: 25px;
+  border-radius: 20px;
   padding: 10px;
   margin-bottom: 20px;
 }
 
-.media-body > .job-title {
+.media-body .job-title {
   font-size: 18px;
   font-weight: 700;
 }
