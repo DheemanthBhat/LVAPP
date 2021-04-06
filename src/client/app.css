@@ -7,11 +7,6 @@ body {
   margin: auto;
 }
 
-/* Common-margin-bottom */
-.c-m-b {
-  margin-bottom: 10px;
-}
-
 .link {
   border: none;
 }
@@ -33,14 +28,20 @@ body {
   margin-left: 10px;
 }
 
-.job-list > li {
+.media {
   border: 1px solid black;
   border-radius: 20px;
   padding: 10px;
   margin-bottom: 20px;
 }
 
-.media-body .job-title {
-  font-size: 18px;
+.job-title {
+  font-size: 1rem;
   font-weight: 700;
+}
+
+.job-description, .job-req {
+  font-size: 0.875rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
 }
